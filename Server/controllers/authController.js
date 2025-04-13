@@ -176,6 +176,6 @@ export const verifyEmail = async (req, res) => {
     }
     catch(error)
     {
-         
+        return res.json({success: false, message: "Failed to verify!"}) 
     }
 }
