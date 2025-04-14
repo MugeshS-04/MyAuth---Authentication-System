@@ -1,11 +1,12 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
+import bg from './../assets/forest.png'
 
 function Home() {
   return (
-    <div className="text-9xl font-bold flex justify-center items-center h-screen">
-      <h1>HOME</h1>
+    <div >
       <Navbar/>
+      <h1 className="w-auto text-9xl font-bold flex justify-center items-center mt-48 mb-2 animate-fade-in">HOME</h1>
     </div>
   )
 }
