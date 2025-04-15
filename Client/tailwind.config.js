@@ -14,6 +14,9 @@ export default {
         '100%': { opacity: '1', transform: 'translateY(0)' },
       },
   },
+  colors: {
+    beige: '#f5f5dc', // or any hex/beige-like shade you prefer
+  },
   plugins: [],
 }
 }
