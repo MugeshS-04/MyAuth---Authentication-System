@@ -10,7 +10,7 @@ function Login(){
   }
 
   return (
-    <div className="p-10">
+    <div className=" p-10">
       <h1 className="text-5xl md:text-7xl font-bold text-center mt-10 mb-20">
         {state === 'Sign-Up' ? 'Create Account' : 'Login Account'}
       </h1>
@@ -62,7 +62,7 @@ function Login(){
   
       {/* Already have account */}
       <p className="text-xl">
-        {state === 'Log-In' ? (<a className="text-blue-600 hover:underline cursor-pointer" onClick={change}>Forgot Password?</a>) : null} 
+        {state === 'Log-In' ? (<a className="text-blue-600 hover:underline cursor-pointer">Forgot Password?</a>) : null} 
       </p>
 
       <p className="text-xl">
@@ -71,9 +71,8 @@ function Login(){
   
       {/* Submit Button */}
       <button
-        type="submit"
-        className="w-60 h-14 hover:bg-gray-50 hover:text-black text-2xl rounded-full border border-beige"
-      >
+        type='button'
+        className="w-60 h-14 hover:bg-gray-50 hover:text-black text-2xl rounded-full border border-beige">
         {state}
       </button>
     </form>
