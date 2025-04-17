@@ -9,15 +9,14 @@ import { AppContext, AppProvider } from '../context/AppContext.jsx'
 function Login(){
 
   const [state, setState] = useState('Log-In')
-  const [Name, setName] = useState('')
-  const [Email, setEmail] = useState('')
-  const [Password, setPassword] = useState('')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [Con_Password, setConPass] = useState('')
 
   const Navigate = useNavigate()
 
-  const backendUrl = useContext(AppContext).backendUrl
-  const setIsLoggedIn = useContext(AppContext).setIsLoggedIn
+  const {backendUrl, setIsLoggedIn } = useContext(AppContext)
   
   function change(e) {
     setState((prevState) => (prevState === 'Log-In' ? 'Sign-Up' : 'Log-In'));
@@ -27,12 +26,12 @@ function Login(){
     try {
       
       e.preventDefault()
-
+      
       axios.defaults.withCredentials = true; 
-
+      
       if(state === 'Sign-Up')
-      {
-        const {data} = await axios.post(VITE_BACKEND_URL + 'api/auth/register', {Name, Email, Password})
+        {
+        const {data} = await axios.post(VITE_BACKEND_URL + 'api/auth/register', {name, email, password})
 
         if(data.success)
         {
@@ -41,9 +40,10 @@ function Login(){
         }else{
           toast.error(data.message)
         }
+
       }
       else{
-        const {data} = await axios.post(backendUrl + 'api/auth/login', {Email, Password})
+        const {data} = await axios.post(backendUrl + 'api/auth/login', {email, password})
 
         if(data.success)
         {
@@ -52,6 +52,7 @@ function Login(){
         }else{
           toast.error(data.message)
         }
+
       }
 
       
@@ -85,7 +86,7 @@ function Login(){
         <input
           type="text"
           onChange={(e) => setName(e.target.value)}
-          value={Name}
+          value={name}
           placeholder="Name"
           className="w-full h-16 p-5 text-2xl border border-beige rounded-full"
           required
@@ -99,7 +100,7 @@ function Login(){
         <input
           type="text"
           onChange={(e) => setEmail(e.target.value)}
-          value={Email}
+          value={email}
           placeholder="Email"
           className="w-full h-16 p-5 text-2xl border border-beige rounded-full"
           required
@@ -112,7 +113,7 @@ function Login(){
         <input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
-          value={Password}
+          value={password}
           placeholder="Password"
           className="w-full h-16 p-5 text-2xl border border-beige rounded-full"
           required 
