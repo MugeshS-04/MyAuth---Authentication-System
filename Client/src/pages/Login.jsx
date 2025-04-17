@@ -31,16 +31,22 @@ function Login(){
       
       if(state === 'Sign-Up')
         {
-        const {data} = await axios.post(VITE_BACKEND_URL + 'api/auth/register', {name, email, password})
+         
+          if (password !== Con_Password) {
+            return toast.error("Passwords do not match");
+          }
+          else{
+            const {data} = await axios.post(backendUrl + 'api/auth/register', {name, email, password})
 
-        if(data.success)
-        {
-          setIsLoggedIn(true)
-          Navigate('/')
-        }else{
-          toast.error(data.message)
-        }
-
+            if(data.success)
+            {
+                setIsLoggedIn(true)
+                Navigate('/')
+                toast.success("Created Successfully!")
+            }else{
+                toast.error(data.message)
+            }
+          }
       }
       else{
         const {data} = await axios.post(backendUrl + 'api/auth/login', {email, password})
