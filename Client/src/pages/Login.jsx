@@ -16,7 +16,7 @@ function Login(){
 
   const Navigate = useNavigate()
 
-  const {backendUrl, setIsLoggedIn } = useContext(AppContext)
+  const {backendUrl, setIsLoggedIn, getUserData } = useContext(AppContext)
   
   function change(e) {
     setState((prevState) => (prevState === 'Log-In' ? 'Sign-Up' : 'Log-In'));
@@ -41,20 +41,23 @@ function Login(){
             if(data.success)
             {
                 setIsLoggedIn(true)
+                getUserData()
                 Navigate('/')
                 toast.success("Created Successfully!")
-            }else{
+              }else{
                 toast.error(data.message)
+              }
             }
           }
-      }
-      else{
-        const {data} = await axios.post(backendUrl + 'api/auth/login', {email, password})
-
-        if(data.success)
-        {
-          setIsLoggedIn(true)
-          Navigate('/')
+          else{
+            const {data} = await axios.post(backendUrl + 'api/auth/login', {email, password})
+            
+            if(data.success)
+              {
+                setIsLoggedIn(true)
+                getUserData()
+                Navigate('/')
+                toast.success("Logged In Successfully!")
         }else{
           toast.error(data.message)
         }

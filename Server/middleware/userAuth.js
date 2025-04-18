@@ -7,11 +7,12 @@ const userAuth = async (req, res, next) => {
     {
         return res.json({success: false, message: 'Not Authorized. Login Again'})
     }
-    const tokenDecode = jwt.verify(token, process.env.JWT_SECRET)
     try
     {
+        const tokenDecode = jwt.verify(token, process.env.JWT_SECRET)
         if(tokenDecode.id)
         {
+            req.body = req.body || {};
             req.body.userID = tokenDecode.id
         }
         else{
@@ -22,7 +23,7 @@ const userAuth = async (req, res, next) => {
     }
     catch(error)
     {
-        return res.json({success: false, message:  "Token Invalid or Expired"})
+        return res.json({success: false, message:  "Invalid Token"})
     }
 }
 
