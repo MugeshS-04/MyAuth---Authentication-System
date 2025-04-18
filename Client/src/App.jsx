@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import EmailVerify from './pages/EmailVerify'
 import Account from './pages/Account'
 import {ToastContainer} from 'react-toastify';
+import ResetPassword from './pages/ResetPassword'
 
 function App()
 {
@@ -16,6 +17,7 @@ function App()
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/verifyemail' element={<EmailVerify/>}></Route>
         <Route path='/account' element={<Account/>}></Route>
+        <Route path='/reset-password' element={<ResetPassword/>}></Route>
       </Routes>
     </>
   )

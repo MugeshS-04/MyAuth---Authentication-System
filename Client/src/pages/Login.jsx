@@ -145,7 +145,7 @@ function Login(){
   
       {/* Already have account */}
       <p className="text-xl">
-        {state === 'Log-In' ? (<a onClick={() => Navigate('/rest-password')} className="text-blue-600 hover:underline cursor-pointer">Forgot Password?</a>) : null} 
+        {state === 'Log-In' ? (<a onClick={() => Navigate('/reset-password')} className="text-blue-600 hover:underline cursor-pointer">Forgot Password?</a>) : null} 
       </p>
 
       <div className="text-xl">
