@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import { toast } from 'react-toastify'
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 export const AppContext = createContext();
 
@@ -24,11 +25,12 @@ export const AppProvider = (props) => {
                         toast.error("Error Occured!")
                 }
         }
+
         const value = {
             backendUrl,
             isLoggedIn, setIsLoggedIn,
             userData, setUserData,
-            getUserData
+            getUserData,
         }
 
         return(

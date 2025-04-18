@@ -13,8 +13,8 @@ export const getUserData = async(req, res) =>{
         return res.json({success: true, 
             userData: {
                 Name: user.name,
-                email: user.email,
-                isAuthenticated: user.isAuthenticated
+                Email: user.email,
+                AccountVerified: user.isAccountVerified
             }
         })
     }
