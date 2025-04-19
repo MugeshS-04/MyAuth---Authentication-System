@@ -1,6 +1,5 @@
 import React,{useState, useEffect, useContext} from 'react'
 import myimg from './../assets/image1.png'
-import userimg from './../assets/user.jpg'
 import { useNavigate } from 'react-router-dom'
 import { AppContext } from '../context/AppContext'
 import axios from 'axios'
