@@ -142,19 +142,18 @@ const ResetPassword = () => {
                         <h1 className='flex justify-center text-6xl mt-9'>Reset Password</h1>
                         <p className='flex justify-center mt-7 '>Enter your new password</p>
                         <div className='flex justify-center'>
-                        <input onChange={(e) => setPassword(e.target.value)} type='text' placeholder="password"className='w-3/4 h-20 p-8 text-3xl border border-beige rounded-full mt-20 '></input>
-                        <input onChange={(e) => setConPassword(e.target.value)} type='text' placeholder="Confirm password"className='w-3/4 h-20 p-8 text-3xl border border-beige rounded-full mt-20 '></input>
+                        <input onChange={(e) => setPassword(e.target.value)} type='text' placeholder="password"className='w-3/4 h-20 p-8 text-3xl border border-beige rounded-full mt-6'></input>
+                        </div>
+                        <div className='flex justify-center'>
+                        <input onChange={(e) => setConPassword(e.target.value)} type='text' placeholder="Confirm password"className='w-3/4 h-20 p-8 text-3xl border border-beige rounded-full mt-6 mb-0'></input>
                         </div>
                     </>
                 )}
                 
             <div className='flex justify-center'>
-                <button type="submit" className='border rounded-full p-5 text-800  hover:bg-gray-50 hover:text-black transition-all text-2xl mt-16'>{state}</button>
+                <button type="submit" className='border rounded-full p-5 text-800  hover:bg-gray-50 hover:text-black transition-all text-2xl mt-14'>{state}</button>
             </div>
       </form>  
-
-
-      
     </>
   )
 }
