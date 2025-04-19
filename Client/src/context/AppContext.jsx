@@ -27,6 +27,9 @@ export const AppProvider = (props) => {
         }
 
         const getUserData = async () => {
+                
+                axios.defaults.withCredentials = true;
+                
                 try {
                         const {data} = await axios.get(backendUrl + 'api/user/get-data')
                         if(data.success)
