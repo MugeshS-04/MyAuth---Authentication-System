@@ -23,12 +23,13 @@ function Login(){
   }
   
   const onsubmitHandler = async(e) => {
+
+    axios.defaults.withCredentials = true;
+
     try {
       
       e.preventDefault()
-      
-      axios.defaults.withCredentials = true; 
-      
+       
       if(state === 'Sign-Up')
         {
          

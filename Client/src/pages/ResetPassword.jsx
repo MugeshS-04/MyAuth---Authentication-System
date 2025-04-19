@@ -48,11 +48,14 @@ const ResetPassword = () => {
 
 
     const submitHandler = async(e) => {
+
+        axios.defaults.withCredentials = true;
+
         try {
 
             e.preventDefault();
 
-            axios.defaults.withCredentials = true;
+            // axios.defaults.withCredentials = true;
 
             if(state === "Sent OTP")
             {
