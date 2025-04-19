@@ -1,6 +1,6 @@
 import {React, useContext, useState} from 'react'
 import myimg from './../assets/image1.png'
-import userimg from './../assets/user.jpg'
+import userimg from './../assets/user_dp.avif'
 import { useNavigate } from 'react-router-dom'
 import { AppContext } from '../context/AppContext'
 import axios from 'axios'
@@ -21,11 +21,11 @@ const Navbar = () => {
         if(data.success)
         {
           Navigate('/verifyemail')
-          toast.dark("Success")
+          toast.dark(data.message)
         }
       } catch (error) {
         
-        toast.dark("Failed")
+        toast.dark(error.message)
     }
   }
 
