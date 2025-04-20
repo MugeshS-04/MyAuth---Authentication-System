@@ -47,14 +47,14 @@ const Navbar = () => {
   }
   return (
     <div className='w-full flex items-center p-4 sm:p-6 sm: px-4 absolute top-0 text-3xl'>
-      <img src={myimg} alt="logo" className='ml-5 flex justify-between w-16 h-16 rounded-full' />
-      <h2 className='text-4xl ml-5 cursor-default'>MyAuth</h2>
+     <img src={myimg} alt="logo" className='ml-0 md:ml-5 flex justify-between w-16 h-16 md:w-16 md:h-16 rounded-full' />
+      <h2 className='ml-3 text-[26px] md:text-4xl md:ml-5 cursor-default'>MyAuth</h2>
 
       {isLoggedIn ? (
         <>
         {/* <button onClick={() => Navigate('/logout')} className='absolute right-32 flex ml-auto items-center gap-2 border border-500 rounded-full px-6 py-2 text-800 cd  hover:bg-gray-50 hover:text-black transition-all'>Login</button> */}
         <div className="group">
-        <img src={userimg} alt='user' className='absolute top-7 right-12 rounded-full w-16 h-16 border border-500' />
+        <img src={userimg} alt='user' className='absolute top-4 right-4 md:top-7 md:right-12 rounded-full w-16 h-16 border border-500' />
         <div className="absolute hidden group-hover:block top-15 right-10 z-10 bg-transparent text-beige rounded p-10 cursor-pointer">
           <ul className="list-none p-5 mt-0 border-[1px] rounded-md text-2xl">
               {userData.AccountVerified ? ( <li onClick={logout} className="hover:bg-gray-50 rounded hover:text-black transition-all p-3">Log Out</li>) : (<>
@@ -67,7 +67,7 @@ const Navbar = () => {
         </div>
         </>
        ) : (
-        <button onClick={() => Navigate('/login')} className='absolute right-10 flex ml-auto items-center gap-2 border border-500 rounded-full px-6 py-2 text-800 cd  hover:bg-gray-50 hover:text-black transition-all'>Login</button>
+        <button onClick={() => Navigate('/login')} className='absolute right-3 text-[18px] px-3 py-1 md:right-10  flex ml-auto items-center gap-2 border border-500 rounded-full md:px-6 md:py-2 md:text-800 cd  hover:bg-gray-50 hover:text-black transition-all'>Login</button>
       ) 
       } 
     </div>

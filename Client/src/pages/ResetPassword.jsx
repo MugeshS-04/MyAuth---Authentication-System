@@ -76,7 +76,7 @@ const ResetPassword = () => {
 
                 setOTP(otpArray.join(""))
 
-                setState("Change Password")
+                setState("Change")
             }
             else{
                 
@@ -108,29 +108,29 @@ const ResetPassword = () => {
   return (
     <>
           <div className='flex items-center p-4 sm:p-6 sm: px-4 absolute left-4 top-0 text-3xl'>
-              <img src={myimg} onClick={() => Navigate('/')}alt="logo" className='ml-1 flex justify-between w-16 h-16 rounded-full cursor-default' />
-              <h2 onClick={() => Navigate('/')} className='text-4xl ml-5 cursor-default'>MyAuth</h2>
+              <img onClick={() => Navigate('/')} src={myimg} alt="logo" className='ml-0 md:ml-5 flex justify-between w-16 h-16 md:w-16 md:h-16 rounded-full' />
+              <h2 onClick={() => Navigate('/')} className='ml-3 text-[26px] md:text-4xl md:ml-5 cursor-default'>MyAuth</h2>
           </div>
 
-        <form onSubmit={submitHandler} className='absolute top-[200px] left-[580px] w-[40%] h-[500px] border-[1px] rounded-md border-beige'>
+        <form onSubmit={submitHandler} className='flex flex-col items-center space-y-8 text-1xl md:absolute md:top-[200px] md:left-[580px] md:w-[40%] md:h-[500px] md:border-[1px] md:rounded-md border-beige'>
             
                 {state === "Sent OTP" ? (
                     <>
-                        <h1 className='flex justify-center text-6xl mt-9'>Reset Password</h1>
-                        <p className='flex justify-center mt-7 '>{state === "Sent OTP" ? "Enter your email to receive the OTP" : "Enter your new password"}</p>
+                        <h1 className="text-4xl md:text-7xl font-bold text-center mt-44 md:mt-10 md:mb-2">Reset Password</h1>
+                        <p className="text-[15px] md:text-2xl font-bold text-center mt-10 md:mb-4">{state === "Sent OTP" ? "Enter your email to receive the OTP" : "Enter your new password"}</p>
                         <div className='flex justify-center'>
-                        <input onChange={(e) => setEmail(e.target.value)} type='text' placeholder="email"className='w-3/4 h-20 p-8 text-3xl border border-beige rounded-full mt-20 '></input>
+                        <input onChange={(e) => setEmail(e.target.value)} type='text' placeholder="email"className='w-full md:w-[400px] mt-7 h-14 text-xl pl-5 md:mb-10 border border-beige rounded-full'></input>
                         </div>
                     </>  
                 ) :  state === "Verify OTP" ?
                 (
                     <>
-                        <h1 className='flex justify-center text-6xl mt-9'>Reset Password OTP</h1>
-                        <p className='flex justify-center mt-5 '>Enter the 6-digit code sent to your email Id</p>
-                        <div className='flex justify-between md:mt-20 ml-10 mr-10' onPaste={handlePaste}>
+                        <h1 className="text-3xl md:text-6xl font-bold text-center mt-44 md:mt-10 md:mb-4">Reset Password OTP</h1>
+                        <p className="text-[12px] md:text-xl font-bold text-center mt-10 md:mb-6">Enter the 6-digit code sent to your email Id</p>
+                        <div className='flex justify-between md:mt-20 md:mb-0 ml-10 mr-10' onPaste={handlePaste}>
                         {Array(6).fill(0).map((_, index) => (
                             <input type='text' maxLength='1' key={index} required 
-                            className='w-24 h-24 text-center text-4xl rounded-md  border-beige border'
+                            className='w-12 h-12 md:w-24 md:h-24 md:mt-7 md:mb-7 text-center text-4xl rounded-md  border-beige border'
                             ref={e => InputRefs.current[index] = e}
                             onInput={(e) => handleInput(e, index)}
                             onKeyDown={(e) => handleKeyDown(e, index)}
@@ -141,19 +141,19 @@ const ResetPassword = () => {
                 ) :
                 (
                     <>
-                        <h1 className='flex justify-center text-6xl mt-9'>Reset Password</h1>
-                        <p className='flex justify-center mt-7 '>Enter your new password</p>
+                        <h1 className="text-3xl md:text-6xl font-bold text-center mt-44 md:mt-10 md:mb-4">Reset Password</h1>
+                        <p className="text-[12px] md:text-xl font-bold text-center mt-10 md:mb-6">Enter your new password</p>
                         <div className='flex justify-center'>
-                        <input onChange={(e) => setPassword(e.target.value)} type='password' placeholder="password"className='w-3/4 h-20 p-8 text-3xl border border-beige rounded-full mt-6'></input>
+                        <input onChange={(e) => setPassword(e.target.value)} type='password' placeholder="password"className='w-full h-16 p-5 text-2xl border border-beige rounded-full'></input>
                         </div>
                         <div className='flex justify-center'>
-                        <input onChange={(e) => setConPassword(e.target.value)} type='password' placeholder="Confirm password"className='w-3/4 h-20 p-8 text-3xl border border-beige rounded-full mt-6 mb-0'></input>
+                        <input onChange={(e) => setConPassword(e.target.value)} type='password' placeholder="Confirm password"className='w-full h-16 p-5 md:mb- text-2xl border border-beige rounded-full'></input>
                         </div>
                     </>
                 )}
                 
-            <div className='flex justify-center'>
-                <button type="submit" className='border rounded-full p-5 text-800  hover:bg-gray-50 hover:text-black transition-all text-2xl mt-14'>{state}</button>
+            <div className='flex justify-center '>
+                <button type="submit" className='border rounded-full p-5 text-800  hover:bg-gray-50 hover:text-black transition-all md:text-2xl'>{state}</button>
             </div>
       </form>  
     </>
