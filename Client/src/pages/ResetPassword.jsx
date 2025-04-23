@@ -112,14 +112,14 @@ const ResetPassword = () => {
               <h2 onClick={() => Navigate('/')} className='ml-3 text-[26px] md:text-4xl md:ml-5 cursor-default'>MyAuth</h2>
           </div>
 
-        <form onSubmit={submitHandler} className='flex flex-col items-center space-y-8 text-1xl md:absolute md:top-[200px] md:left-[580px] md:w-[40%] md:h-[500px] md:border-[1px] md:rounded-md border-beige'>
+        <form onSubmit={submitHandler} className='flex justify-self-center flex-col text-1xl mt-40 md:p-10 md:mt-60 md:h-full md:w-1/3 md:border-[1px] md:rounded-md border-beige'>
             
                 {state === "Sent OTP" ? (
                     <>
-                        <h1 className="text-4xl md:text-7xl font-bold text-center mt-44 md:mt-10 md:mb-2">Reset Password</h1>
-                        <p className="text-[15px] md:text-2xl font-bold text-center mt-10 md:mb-4">{state === "Sent OTP" ? "Enter your email to receive the OTP" : "Enter your new password"}</p>
+                        <h1 className=" md:flex md:justify-center text-4xl mt-10 font-bold md:text-[350%] md:mt-2">Reset Password</h1>
+                        <p className="text-1xl mt-7 md:flex md:justify-center">{state === "Sent OTP" ? "Enter your email to receive the OTP" : "Enter your new password"}</p>
                         <div className='flex justify-center'>
-                        <input onChange={(e) => setEmail(e.target.value)} type='text' placeholder="email"className='w-full md:w-[400px] mt-7 h-14 text-xl pl-5 md:mb-10 border border-beige rounded-full'></input>
+                        <input onChange={(e) => setEmail(e.target.value)} type='text' placeholder="email"className='mb-8 md:w-[400px] mt-7 h-12 text-xl pl-4 md:mb-10 border border-beige rounded-full'></input>
                         </div>
                     </>  
                 ) :  state === "Verify OTP" ?

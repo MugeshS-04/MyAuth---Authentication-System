@@ -73,15 +73,15 @@ function Login(){
   }
 
   return (
-    <div className=" p-10">
+    <div>
 
-      <div className='flex items-center p-4 sm:p-6 sm: px-4 absolute left-4 top-0 text-3xl'>
+      <div className='flex items-center p-4 sm:p-6 sm: px-4 absolute top-0 text-3xl'>
           <img  onClick={() => Navigate('/')} src={myimg} alt="logo" className='ml-0 md:ml-5 flex justify-between w-16 h-16 md:w-16 md:h-16 rounded-full' />
           <h2   onClick={() => Navigate('/')}className='ml-3 text-[26px] md:text-4xl md:ml-5 cursor-default'>MyAuth</h2>
       </div>
       
 
-      <h1 className="text-5xl md:text-7xl font-bold text-center mt-20 md:mt-10 md:mb-20">
+      <h1 className="text-5xl md:text-7xl font-bold text-center mt-40 md:mt-32 md:mb-20">
         {state === 'Sign-Up' ? 'Create' : 'Login'}
       </h1>
       <p className="text-2xl md:text-2xl font-bold text-center mt-10 mb-10 md:mt-10 md:mb-20">
