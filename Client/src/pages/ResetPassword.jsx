@@ -116,18 +116,18 @@ const ResetPassword = () => {
             
                 {state === "Sent OTP" ? (
                     <>
-                        <h1 className="md:flex md:justify-center text-4xl mt-10 font-bold md:text-[350%] md:mt-2">Reset Password</h1>
-                        <p className="text-1xl mt-7 md:flex md:justify-center">{state === "Sent OTP" ? "Enter your email to receive the OTP" : "Enter your new password"}</p>
+                        <h1 className="md:flex md:justify-center text-4xl mt-10 font-bold md:text-[350%] p-5 md:mt-2">Reset Password</h1>
+                        <p className="text-1xl mt-7 flex justify-center">{state === "Sent OTP" ? "Enter your email to receive the OTP" : "Enter your new password"}</p>
                         <div className='flex justify-center'>
-                        <input onChange={(e) => setEmail(e.target.value)} type='text' placeholder="email"className='mb-8 md:w-[400px] mt-7 h-12 text-xl pl-4 md:mb-10 border border-beige rounded-full'></input>
+                        <input onChange={(e) => setEmail(e.target.value)} type='text' placeholder="email"className='mb-8 md:w-[78%] mt-7 h-12 text-xl pl-4 md:mb-10 border border-beige rounded-full'></input>
                         </div>
                     </>  
                 ) :  state === "Verify OTP" ?
                 (
                     <>
-                        <h1 className="ml-4 md:flex md:justify-center text-4xl mt-10 font-bold md:text-[280%] md:mt-2">Reset Password OTP</h1>
+                        <h1 className="ml-4 md:flex md:justify-center text-4xl mt-10 font-bold md:text-[280%] md:mt-2">Reset Password</h1>
                         <p className="text-1xl mt-7 flex justify-center">Enter the 6-digit code sent to your email Id</p>
-                        <div className='flex justify-between mt-10 md:mt-2 md:mb-0' onPaste={handlePaste}>
+                        <div className='flex justify-evenly mt-5 md:mt-2' onPaste={handlePaste}>
                         {Array(6).fill(0).map((_, index) => (
                             <input type='text' maxLength='1' key={index} required 
                             className='w-12 h-[60px] mb-10 md:flex md:justify-between md:w-[12%] md:mt-7 md:mb-10 text-center md:text-2xl rounded-md  border-beige border'
@@ -141,13 +141,13 @@ const ResetPassword = () => {
                 ) :
                 (
                     <>
-                        <h1 className="text-3xl md:text-6xl font-bold text-center mt-44 md:mt-10 md:mb-4">Reset Password</h1>
-                        <p className="text-[12px] md:text-xl font-bold text-center mt-10 md:mb-6">Enter your new password</p>
-                        <div className='flex justify-center'>
-                        <input onChange={(e) => setPassword(e.target.value)} type='password' placeholder="password"className='w-full h-16 p-5 text-2xl border border-beige rounded-full'></input>
+                        <h1 className="flex justify-center text-4xl mt-10 font-bold md:text-[280%] md:mt-2">Reset Password</h1>
+                        <p className="md:text-xl text-center mt-6 mb-6">Enter your new password</p>
+                        <div className='flex justify-center mb-5'>
+                        <input onChange={(e) => setPassword(e.target.value)} type='password' placeholder="password"className='w-full h-16 p-5 text-[100%] border border-beige rounded-full'></input>
                         </div>
-                        <div className='flex justify-center'>
-                        <input onChange={(e) => setConPassword(e.target.value)} type='password' placeholder="Confirm password"className='w-full h-16 p-5 md:mb- text-2xl border border-beige rounded-full'></input>
+                        <div className='flex justify-center mb-5'>
+                        <input onChange={(e) => setConPassword(e.target.value)} type='password' placeholder="Confirm password"className='w-full h-16 p-5 md:mb- text-[100%] border border-beige rounded-full'></input>
                         </div>
                     </>
                 )}
