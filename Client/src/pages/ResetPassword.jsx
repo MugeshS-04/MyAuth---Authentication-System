@@ -116,7 +116,7 @@ const ResetPassword = () => {
             
                 {state === "Sent OTP" ? (
                     <>
-                        <h1 className=" md:flex md:justify-center text-4xl mt-10 font-bold md:text-[350%] md:mt-2">Reset Password</h1>
+                        <h1 className="md:flex md:justify-center text-4xl mt-10 font-bold md:text-[350%] md:mt-2">Reset Password</h1>
                         <p className="text-1xl mt-7 md:flex md:justify-center">{state === "Sent OTP" ? "Enter your email to receive the OTP" : "Enter your new password"}</p>
                         <div className='flex justify-center'>
                         <input onChange={(e) => setEmail(e.target.value)} type='text' placeholder="email"className='mb-8 md:w-[400px] mt-7 h-12 text-xl pl-4 md:mb-10 border border-beige rounded-full'></input>
@@ -125,12 +125,12 @@ const ResetPassword = () => {
                 ) :  state === "Verify OTP" ?
                 (
                     <>
-                        <h1 className="text-3xl md:text-6xl font-bold text-center mt-44 md:mt-10 md:mb-4">Reset Password OTP</h1>
-                        <p className="text-[12px] md:text-xl font-bold text-center mt-10 md:mb-6">Enter the 6-digit code sent to your email Id</p>
-                        <div className='flex justify-between md:mt-20 md:mb-0 ml-10 mr-10' onPaste={handlePaste}>
+                        <h1 className="ml-4 md:flex md:justify-center text-4xl mt-10 font-bold md:text-[280%] md:mt-2">Reset Password OTP</h1>
+                        <p className="text-1xl mt-7 flex justify-center">Enter the 6-digit code sent to your email Id</p>
+                        <div className='flex justify-between mt-10 md:mt-2 md:mb-0' onPaste={handlePaste}>
                         {Array(6).fill(0).map((_, index) => (
                             <input type='text' maxLength='1' key={index} required 
-                            className='w-12 h-12 md:w-24 md:h-24 md:mt-7 md:mb-7 text-center text-4xl rounded-md  border-beige border'
+                            className='w-12 h-[60px] mb-10 md:flex md:justify-between md:w-[12%] md:mt-7 md:mb-10 text-center md:text-2xl rounded-md  border-beige border'
                             ref={e => InputRefs.current[index] = e}
                             onInput={(e) => handleInput(e, index)}
                             onKeyDown={(e) => handleKeyDown(e, index)}
