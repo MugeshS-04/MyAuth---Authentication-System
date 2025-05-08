@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'mugeshs04/MyAuth---Authentication-System'
+        DOCKER_IMAGE = 'mugeshs04/myauth'
         DOCKER_TAG = 'latest'
     }
 
