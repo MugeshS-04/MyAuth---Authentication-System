@@ -15,11 +15,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
+                dir('client') { // change directory before building
                 script {
-                    docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
-                }
+                    docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}", ".")
             }
         }
+    }
+}
 
         stage('Push to Docker Hub') {
             steps {
