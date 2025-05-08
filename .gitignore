@@ -29,6 +29,3 @@ dist-ssr
 .gitignore
 Client/src/assets/user.jpg
 
-.dockerignore 
-deployment.yaml 
-Dockerfile
