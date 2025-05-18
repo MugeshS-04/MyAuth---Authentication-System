@@ -9,13 +9,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/MugeshS-04/MyAuth---Authentication-System.git' // or use SCM settings
+                git branch: 'main', url: 'https://github.com/MugeshS-04/MyAuth---Authentication-System.git'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                dir('client') { // change directory before building
+                dir('client') { 
                 script {
                     docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}", ".")
             }
