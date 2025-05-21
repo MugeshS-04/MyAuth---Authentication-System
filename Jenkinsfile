@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+    triggers {
+        pollSCM('H/5 * * * *') 
+    }
 
     environment {
         DOCKER_IMAGE = 'mugeshs04/myauth'
@@ -16,12 +20,12 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 dir('client') { 
-                script {
-                    docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}", ".")
+                    script {
+                        docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}", ".")
+                    }
+                }
             }
         }
-    }
-}
 
         stage('Push to Docker Hub') {
             steps {
@@ -31,6 +35,13 @@ pipeline {
                     }
                 }
             }
+        }
+    }
+    
+
+    post {
+        always {
+            sh 'docker logout' 
         }
     }
 }
