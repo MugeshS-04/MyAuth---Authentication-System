@@ -6,6 +6,10 @@ pipeline {
         DOCKER_TAG = 'latest'
     }
 
+    triggers {
+        pollSCM('H/5 * * * *')
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -15,13 +19,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                dir('client') { 
-                script {
-                    docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}", ".")
+                dir('client') {
+                    script {
+                        docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}", ".")
+                    }
+                }
             }
         }
-    }
-}
 
         stage('Push to Docker Hub') {
             steps {
